@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
-
-</AnchorPane>
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="206.0" style="-fx-background-color: #008100;">
+         <children>
+            <ImageView fitHeight="77.0" fitWidth="88.0" layoutX="57.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@coins.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="50.0" layoutY="252.0" prefHeight="36.0" prefWidth="142.0" text="NextByte" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_IniciarSeccion" layoutX="39.0" layoutY="370.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="142.0" style="-fx-background-color: #ffffff;" text="Iniciar Seccion" />
+            <Label layoutX="40.0" layoutY="326.0" prefHeight="36.0" prefWidth="142.0" text="Bienvenid@" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="600.0" prefWidth="593.0" style="-fx-background-color: FFFBFB;">
+         <children>
+            <ImageView fitHeight="105.0" fitWidth="120.0" layoutX="227.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Web.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="149.0" layoutY="147.0" prefHeight="46.0" prefWidth="242.0" text="Nombre">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="149.0" layoutY="249.0" prefHeight="36.0" prefWidth="105.0" text="Apellido">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_Nombre" layoutX="148.0" layoutY="193.0" prefHeight="36.0" prefWidth="286.0" promptText="Roberto" />
+            <TextField fx:id="txt_Apellido" layoutX="148.0" layoutY="285.0" prefHeight="36.0" prefWidth="285.0" promptText="Brito" />
+            <Button fx:id="btn_Registrarse" layoutX="228.0" layoutY="523.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: #008100;" text="Registrarse" textFill="WHITE" />
+            <TextField fx:id="txt_Usuario" layoutX="149.0" layoutY="376.0" prefHeight="36.0" prefWidth="285.0" promptText="Rober16" />
+            <Label layoutX="149.0" layoutY="340.0" prefHeight="36.0" prefWidth="105.0" text="Usuario">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_Contraseña" layoutX="148.0" layoutY="470.0" prefHeight="36.0" prefWidth="285.0" promptText="***************" />
+            <Label layoutX="149.0" layoutY="426.0" prefHeight="36.0" prefWidth="105.0" text="Contraseña">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
