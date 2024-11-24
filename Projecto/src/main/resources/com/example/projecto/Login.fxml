@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projecto.LoginController">
    <children>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
          <children>
@@ -26,7 +26,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btn_Registrarse" layoutX="39.0" layoutY="370.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="142.0" style="-fx-background-color: #ffffff;" text="Registrarse" AnchorPane.leftAnchor="39.19999999999999" AnchorPane.rightAnchor="25.0" />
+                  <Button fx:id="btn_Registrarse" layoutX="39.0" layoutY="370.0" mnemonicParsing="false" onAction="#registrarview" prefHeight="36.0" prefWidth="142.0" style="-fx-background-color: #ffffff;" text="Registrarse" AnchorPane.leftAnchor="39.19999999999999" AnchorPane.rightAnchor="25.0" />
                   <Label layoutX="40.0" layoutY="326.0" prefHeight="36.0" prefWidth="142.0" text="Bienvenid@" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
@@ -52,9 +52,14 @@
                      </font>
                   </Label>
                   <TextField fx:id="txt_Usuario" layoutX="148.0" layoutY="282.0" prefHeight="36.0" prefWidth="286.0" promptText="Roberto19" AnchorPane.leftAnchor="148.00000000000006" AnchorPane.rightAnchor="159.20000000000005" />
-                  <TextField fx:id="txt_Constraseña" layoutX="149.0" layoutY="397.0" prefHeight="36.0" prefWidth="285.0" promptText="*********" AnchorPane.leftAnchor="148.8" AnchorPane.rightAnchor="159.0" />
-                  <Button fx:id="btn_iniciar" layoutX="228.0" layoutY="492.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: #008100;" text="Iniciar" textFill="WHITE" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="237.60000000000002" />
-                  <CheckBox fx:id="box_Constraseña" layoutX="149.0" layoutY="451.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="142.0" text="Mostrar Contraseña" AnchorPane.leftAnchor="149.0" AnchorPane.rightAnchor="302.4" />
+                  <Button fx:id="btn_iniciar" layoutX="137.0" layoutY="470.0" mnemonicParsing="false" onAction="#iniciar" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: #008100;" text="Iniciar" textFill="WHITE" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="330.2" />
+                  <Label fx:id="error" layoutX="141.0" layoutY="179.0" prefHeight="36.0" prefWidth="355.0" textAlignment="CENTER" textFill="#008100">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn_cerrar" layoutX="326.0" layoutY="470.0" mnemonicParsing="false" onAction="#cerrar" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: #008100;" text="Cerrar" textFill="WHITE" />
+                  <PasswordField fx:id="txt_Clave" layoutX="147.0" layoutY="397.0" prefHeight="36.0" prefWidth="294.0" promptText="*************88" />
                </children>
             </AnchorPane>
          </children>

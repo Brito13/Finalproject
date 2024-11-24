@@ -2,44 +2,60 @@ package com.example.projecto;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Application;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.net.URL;
 import java.time.LocalTime;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.ResourceBundle;
 
-public class HomeController {
+
+public class HomeController extends Application {
+
+
 
     @FXML
-    private Label timeLabel;  // El Label donde se mostrará la hora
+     Label timeLabel;  // El Label donde se mostrará la hora
     @FXML
-    private Label dateLabel;  // El Label donde se mostrará el día
+     Label dateLabel;  // El Label donde se mostrará el día
 
     public void initialize() {
-        // Crear un objeto Timeline para actualizar el reloj y la fecha cada segundo
-        Timeline clock = new Timeline(
-                new KeyFrame(Duration.ZERO, e -> updateDateTime()),  // Llamar a updateDateTime() al inicio
-                new KeyFrame(Duration.seconds(1))  // Actualizar cada segundo
-        );
-        clock.setCycleCount(Timeline.INDEFINITE);  // El reloj y fecha se actualizan indefinidamente
-        clock.play();  // Iniciar el reloj
+        loadLabelText();
     }
 
-    // Método para actualizar tanto la hora como la fecha
-    private void updateDateTime() {
+
+    private void loadLabelText() {
         // Obtener la hora actual
         LocalTime time = LocalTime.now();
-        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");  // Formato de la hora
-        String formattedTime = time.format(timeFormatter);  // Formatear la hora
+        LocalDate today = LocalDate.now();
 
-        // Obtener la fecha actual
-        LocalDate date = LocalDate.now();
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("EEEE, dd 'de' MMMM");  // Formato de la fecha
-        String formattedDate = date.format(dateFormatter);  // Formatear la fecha
+        // Definir el formato para el día de la semana
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE");
 
-        // Actualizar los Labels con los valores formateados
-        timeLabel.setText(formattedTime);  // Actualizar la hora
-        dateLabel.setText(formattedDate);  // Actualizar el día
+        // Formatear la fecha para obtener el nombre completo del día
+        String dayOfWeek = today.format(formatter);
+
+
+        // Definir el formato de la hora
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm a");  // Puedes personalizar el formato
+        String formattedTime = time.format(timeFormatter);  // Formatear la hora en el formato deseado
+
+        // Establecer el texto del label con la hora actual
+        timeLabel.setText(formattedTime);
+        dateLabel.setText(dayOfWeek);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        loadLabelText();
     }
 }

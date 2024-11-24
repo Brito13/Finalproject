@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projecto.HomeController">
    <children>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
          <children>
@@ -27,8 +27,14 @@
                               <Image url="@team-work.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="timeLabel" layoutX="24.0" layoutY="55.0" prefHeight="26.0" prefWidth="87.0" textFill="WHITE" />
-                        <Label fx:id="dateLabel" layoutX="24.0" layoutY="88.0" prefHeight="26.0" prefWidth="87.0" textFill="WHITE" />
+                        <Label fx:id="timeLabel" layoutX="24.0" layoutY="55.0" prefHeight="26.0" prefWidth="87.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
+                        <Label fx:id="dateLabel" layoutX="24.0" layoutY="88.0" prefHeight="26.0" prefWidth="87.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="41.0" layoutY="259.0" prefHeight="81.0" prefWidth="101.0" style="-fx-background-color: #008100; -fx-background-radius: 20;">
@@ -38,7 +44,10 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Label fx:id="label_usuarios" layoutX="21.0" layoutY="41.0" prefHeight="18.0" prefWidth="61.0" />
+                        <Label fx:id="label_usuarios" layoutX="21.0" layoutY="41.0" prefHeight="18.0" prefWidth="61.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="157.0" layoutY="259.0" prefHeight="81.0" prefWidth="101.0" style="-fx-background-color: #008100; -fx-background-radius: 20;">
@@ -48,7 +57,10 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Label fx:id="label_facturas" layoutX="25.0" layoutY="41.0" prefHeight="18.0" prefWidth="50.0" />
+                        <Label fx:id="label_facturas" layoutX="25.0" layoutY="41.0" prefHeight="18.0" prefWidth="50.0" textFill="#fffbfb">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Label>
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="269.0" layoutY="259.0" prefHeight="81.0" prefWidth="101.0" style="-fx-background-color: #008100; -fx-background-radius: 20;">
@@ -58,7 +70,10 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <Label fx:id="label_pagadas" layoutX="27.0" layoutY="41.0" prefHeight="18.0" prefWidth="48.0" />
+                        <Label fx:id="label_pagadas" layoutX="27.0" layoutY="41.0" prefHeight="18.0" prefWidth="48.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font></Label>
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="387.0" layoutY="74.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="501.0" prefWidth="200.0" style="-fx-background-color: #008100; -fx-background-radius: 20;">
