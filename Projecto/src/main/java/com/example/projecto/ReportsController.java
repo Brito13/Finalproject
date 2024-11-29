@@ -20,35 +20,24 @@ import java.util.Objects;
 public class ReportsController{
     @FXML
     private DatePicker datedesde;
-
     @FXML
     private DatePicker datehasta;
-
     @FXML
     private TextField txtnom;
-
     @FXML
     private TextField txttel;
-
     @FXML
     private TableColumn<Factura, Integer> idcuenta;
-
     @FXML
     private TableColumn<Factura, Integer> idprovcolumn;
-
     @FXML
     private TableColumn<Factura, Double> montocolumn;
-
     @FXML
     private TableColumn<Factura, String> estadocolumn;
-
     @FXML
     private TableColumn<Factura, Date> fechacolum;
-
     @FXML
     private TableView<Factura> tableresults;
-
-
     @FXML
     private Button btnvolver;
 
