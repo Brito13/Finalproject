@@ -9,8 +9,8 @@ public class DBconextion {
 
     public Connection getConexion() {
         String usuarioDB = "root";
-        String claveDB = "16150905";
-        String url = "jdbc:mysql://localhost:3306/nextbyte";
+        String claveDB = "john310502";
+        String url = "jdbc:mysql://localhost:3306/clientes";
         String driver = "com.mysql.cj.jdbc.Driver"; // Opcional, si necesitas cargar el driver explícitamente
 
         try {

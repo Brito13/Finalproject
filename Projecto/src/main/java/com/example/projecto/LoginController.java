@@ -98,7 +98,5 @@ public class LoginController {
         } catch (Exception exception) {
             throw new RuntimeException(exception);
         }
-
     }
-
 }
