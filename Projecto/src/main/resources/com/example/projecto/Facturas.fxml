@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" prefHeight="634.0" prefWidth="522.0" spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.projecto.FacturasController">
+    <HBox spacing="10">
+        <Label text="Número de Factura:" />
+        <TextField fx:id="numeroFacturaField" />
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Fecha:" />
+        <DatePicker fx:id="fechaField" />
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Monto:" />
+        <TextField fx:id="montoField" />
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Proveedor:" />
+        <ComboBox fx:id="proveedorComboBox" />
+    </HBox>
+    <Button onAction="#agregarFactura" text="Agregar Factura" />
+    <TableView fx:id="facturasTable">
+        <columns>
+            <TableColumn fx:id="idColumn" text="ID" />
+            <TableColumn fx:id="numeroFacturaColumn" text="Número de Factura" />
+            <TableColumn fx:id="fechaColumn" text="Fecha" />
+            <TableColumn fx:id="montoColumn" text="Monto" />
+            <TableColumn fx:id="proveedorColumn" text="Proveedor" />
+            <TableColumn fx:id="estadoColumn" text="Estado" />
+        </columns>
+    </TableView>
+    <HBox spacing="10">
+        <Button onAction="#cambiarEstadoPagada" text="Cambiar a Pagada" />
+        <Button onAction="#cambiarEstadoPendiente" text="Cambiar a Pendiente" />
+    </HBox>
+</VBox>

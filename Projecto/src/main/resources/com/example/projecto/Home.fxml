@@ -15,7 +15,9 @@
          <children>
             <AnchorPane prefHeight="600.0" prefWidth="206.0" style="-fx-background-color: #008100;" styleClass="sd">
                <children>
-                  <Button fx:id="bttnconection" layoutX="44.0" layoutY="532.0" mnemonicParsing="false" onAction="#handleSwitchView" text="Generar Reporte" />
+                  <Button fx:id="bttnconection" layoutX="40.0" layoutY="531.0" mnemonicParsing="false" onAction="#handleSwitchView" prefHeight="26.0" prefWidth="122.0" text="Generar Reporte" />
+                  <Button fx:id="bttnconectionProv" layoutX="40.0" layoutY="491.0" mnemonicParsing="false" onAction="#registrarProveView" prefHeight="26.0" prefWidth="122.0" text="Agregar provedores" />
+                  <Button fx:id="bttnagregarfactura" layoutX="40.0" layoutY="453.0" mnemonicParsing="false" onAction="#registrarFacturaView" prefHeight="26.0" prefWidth="122.0" text="Agregar facturas" />
                </children></AnchorPane>
             <AnchorPane prefHeight="600.0" prefWidth="593.0" style="-fx-background-color: FFFBFB;">
                <children>

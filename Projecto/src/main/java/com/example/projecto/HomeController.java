@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.scene.control.Button;
@@ -35,6 +36,12 @@ public class HomeController extends Application {
 
     @FXML
     private Button bttnconection; // Boton para acceder vista reportes John
+
+    @FXML
+    private Button bttnconectionProv;
+
+    @FXML
+    private Button bttnagregarfactura;
 
     public void initialize() {
         loadLabelText();
@@ -76,6 +83,41 @@ public class HomeController extends Application {
             e.printStackTrace();
         }
     }
+
+    @FXML
+    private void registrarProveView(ActionEvent event) throws IOException{
+        try{
+            VBox thirdView = FXMLLoader.load(getClass().getResource("Proveedores.fxml"));
+
+            Scene thirdScene = new Scene(thirdView);
+
+            Stage stage = (Stage) bttnconectionProv.getScene().getWindow();
+
+            stage.setScene(thirdScene);
+
+        }catch (IOException e){
+            e.printStackTrace();
+
+        }
+    }
+
+    @FXML
+    private void registrarFacturaView(ActionEvent event) throws IOException{
+        try{
+            VBox fourthView = FXMLLoader.load(getClass().getResource("Facturas.fxml"));
+
+            Scene fourthScene = new Scene(fourthView);
+
+            Stage stage = (Stage) bttnagregarfactura.getScene().getWindow();
+
+            stage.setScene(fourthScene);
+
+        }catch (IOException e){
+            e.printStackTrace();
+
+        }
+    }
+
 
     @Override
     public void start(Stage primaryStage) throws Exception{

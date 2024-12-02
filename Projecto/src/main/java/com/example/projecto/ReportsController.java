@@ -10,10 +10,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.*;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 import java.util.Objects;
 
 
@@ -35,7 +36,7 @@ public class ReportsController{
     @FXML
     private TableColumn<Factura, String> estadocolumn;
     @FXML
-    private TableColumn<Factura, Date> fechacolum;
+    private TableColumn<Factura, LocalDate> fechacolum;
     @FXML
     private TableView<Factura> tableresults;
     @FXML
@@ -92,7 +93,7 @@ public class ReportsController{
 
         try {
             String query =  "SELECT f.id, f.numero_factura, f.fecha, f.monto, f.estado, f.proveedor_id "
-                    + "FROM facturascuentas f " + "JOIN proveedores p ON f.proveedor_id = p.ID_proveedor "
+                    + "FROM facturas f " + "JOIN proveedores p ON f.proveedor_id = p.ID_proveedor "
                     + "WHERE p.nombre = ? AND p.contacto = ? AND f.estado = 'pendiente' "
                     + "AND f.fecha BETWEEN ? AND ?";
 
@@ -119,7 +120,7 @@ public class ReportsController{
                     estado = "pendiente";  // Asignar un valor predeterminado si es nulo
                 }
 
-                Factura factura = new Factura(id, numeroFactura, fecha, monto, proveedorid, estado);
+                Factura factura = new Factura(id, numeroFactura, fecha.toLocalDate(), monto, proveedorid, estado);
                 facturaList.add(factura);
             }
             tableresults.setItems(facturaList);
