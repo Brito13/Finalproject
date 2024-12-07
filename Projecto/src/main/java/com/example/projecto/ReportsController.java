@@ -92,6 +92,22 @@ public class ReportsController{
         ObservableList<Factura> facturaList = FXCollections.observableArrayList();
 
         try {
+            String checkProveedorQuery = "SELECT COUNT(*) AS count "
+                    + "FROM proveedores "
+                    + "WHERE nombre = ? AND contacto = ?";
+
+            PreparedStatement checkStmt = conextionDB.prepareStatement(checkProveedorQuery);
+            checkStmt.setString(1, nombre);
+            checkStmt.setString(2, contacto);
+            ResultSet checkResult = checkStmt.executeQuery();
+
+            if (checkResult.next() && checkResult.getInt("count") == 0) {
+                Alert alerta = new Alert(Alert.AlertType.INFORMATION,
+                        "No se encontró ningún proveedor con el nombre y contacto especificados.");
+                alerta.showAndWait();
+                return;
+            }
+
             String query =  "SELECT f.id, f.numero_factura, f.fecha, f.monto, f.estado, f.proveedor_id "
                     + "FROM facturas f " + "JOIN proveedores p ON f.proveedor_id = p.ID_proveedor "
                     + "WHERE p.nombre = ? AND p.contacto = ? AND f.estado = 'pendiente' "
@@ -124,6 +140,14 @@ public class ReportsController{
                 facturaList.add(factura);
             }
             tableresults.setItems(facturaList);
+
+
+            // Verificar si la lista está vacía
+            if (facturaList.isEmpty()) {
+                Alert alerta = new Alert(Alert.AlertType.INFORMATION,
+                        "No se encontraron facturas pendientes para el proveedor especificado en el rango de fechas.");
+                alerta.showAndWait();
+            }
 
         } catch (SQLException ex) {
             ex.printStackTrace();
