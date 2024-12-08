@@ -1,0 +1,105 @@
+/* Estilos para el fondo y contenedores */
+
+.root {
+    -fx-font-family: "Arial";
+    -fx-background-color: #f4f4f4;
+    -fx-padding: 10;
+}
+
+.AnchorPane {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1;
+}
+
+/* Estilos para los títulos */
+#lbtitulo {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2E3B4E;
+}
+
+#lbtitlerep {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2E3B4E;
+}
+
+/* Estilos para las etiquetas */
+.Label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #333;
+    -fx-padding: 5px;
+}
+
+/* Estilos para los campos de texto */
+.TextField {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+    -fx-font-size: 14px;
+}
+
+/* Estilos para el DatePicker */
+.DatePicker {
+    -fx-background-color: #f5f5f5;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 5px;
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+/* Estilos para la tabla (TableView) */
+.TableView {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1;
+    -fx-font-size: 14px;
+    -fx-table-cell-border-color: #ccc;
+}
+
+/* Estilos para las columnas de la tabla */
+.TableColumn {
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+/* Estilos para el botón de la tabla */
+.TableView .column-header {
+    -fx-background-color: #2E3B4E;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+}
+
+.TableColumn .table-cell {
+    -fx-padding: 8px;
+    -fx-background-color: #f9f9f9;
+    -fx-border-color: #ccc;
+}
+
+.TableColumn .table-cell:hover {
+    -fx-background-color: #e1e1e1;
+}
+
+/* Estilos para el rectángulo de fondo */
+#repbg {
+    -fx-fill: #008100;
+    -fx-arc-width: 10;
+    -fx-arc-height: 10;
+}
+
+/* Estilos adicionales para la interfaz */
+#arcdatos {
+    -fx-background-color: #D3D3D3;
+    -fx-border-radius: 5px;
+    -fx-padding: 14px;
+}
+
+#lbdprov {
+    -fx-front-size: 16;
+    -fx-text-fill: #2E3B4E;
+    -fx-font-weight: bold;
+}
