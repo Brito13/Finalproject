@@ -47,8 +47,8 @@ public class ReportsController{
         FXMLLoader loader = new FXMLLoader(getClass().getResource(""));
         Parent root = loader.load();
         Stage stage = (Stage) ((Button) ex.getSource()).getScene().getWindow();
-
         Scene scene = new Scene(root);
+        //cambia la ruta a donde tengas los styles.css
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("C:\\Users\\John\\Finalproject\\Projecto\\src\\main\\resources\\com\\example\\projecto\\styles.css")).toExternalForm());
         stage.setScene(scene);
 
