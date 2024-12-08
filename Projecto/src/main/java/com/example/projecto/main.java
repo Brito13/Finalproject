@@ -17,6 +17,7 @@ public class main extends Application {
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         primaryStage.setTitle("SmartManager");
+        //agrega aqui tu ruta de donde se te guardo el documento
         Image icon = new Image("C:\\Users\\John\\Finalproject\\Projecto\\src\\main\\resources\\com\\example\\projecto\\NextByte.png");
         primaryStage.getIcons().add(icon);
         primaryStage.setScene(new Scene(root));
