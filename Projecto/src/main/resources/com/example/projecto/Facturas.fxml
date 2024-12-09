@@ -10,10 +10,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" prefHeight="634.0" prefWidth="522.0" spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.example.projecto.FacturasController">
+<VBox alignment="TOP_CENTER" prefHeight="634.0" prefWidth="522.0" spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projecto.FacturasController">
     <HBox spacing="10">
         <Label text="Número de Factura:" />
-        <TextField fx:id="numeroFacturaField" />
+        <TextField fx:id="numeroFacturaField" promptText="FA#######" />
     </HBox>
     <HBox spacing="10">
         <Label text="Fecha:" />
@@ -25,9 +25,9 @@
     </HBox>
     <HBox spacing="10">
         <Label text="Proveedor:" />
-        <ComboBox fx:id="proveedorComboBox" />
+        <ComboBox fx:id="proveedorComboBox" prefHeight="26.0" prefWidth="68.0" />
     </HBox>
-    <Button onAction="#agregarFactura" text="Agregar Factura" />
+    <Button fx:id="agregarfact" onAction="#agregarFactura" text="Agregar Factura" />
     <TableView fx:id="facturasTable">
         <columns>
             <TableColumn fx:id="idColumn" text="ID" />
@@ -41,5 +41,6 @@
     <HBox spacing="10">
         <Button onAction="#cambiarEstadoPagada" text="Cambiar a Pagada" />
         <Button onAction="#cambiarEstadoPendiente" text="Cambiar a Pendiente" />
+      <Button fx:id="btnregresarHome" mnemonicParsing="false" onAction="#volverHomeFact" prefHeight="26.0" prefWidth="106.0" text="Regresar" />
     </HBox>
 </VBox>

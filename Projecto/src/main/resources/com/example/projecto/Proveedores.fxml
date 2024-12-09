@@ -31,7 +31,8 @@
         </columns>
     </TableView>
     <HBox spacing="10">
-        <Button onAction="#editarProveedor" text="Editar" />
-        <Button onAction="#eliminarProveedor" text="Eliminar" />
+        <Button fx:id="btneditar" onAction="#editarProveedor" text="Editar" />
+        <Button fx:id="btneliminar" onAction="#eliminarProveedor" text="Eliminar" />
+      <Button fx:id="btnvolverHome" mnemonicParsing="false" onAction="#volverHome" text="Volver" />
     </HBox>
 </VBox>

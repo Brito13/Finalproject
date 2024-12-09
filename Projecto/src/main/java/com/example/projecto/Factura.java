@@ -70,7 +70,6 @@ public class Factura {
         this.estado.set(estado);
     }
 
-    // Métodos de propiedad para usar en PropertyValueFactory
     public IntegerProperty idProperty() {
         return id;
     }

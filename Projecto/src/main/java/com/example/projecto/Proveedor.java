@@ -67,5 +67,11 @@ public class Proveedor {
     public StringProperty direccionProperty() {
         return direccion;
     }
+
+    @Override
+    public String toString() {
+        return getNombre();
+    }
 }
+
 

@@ -1,11 +1,12 @@
 package com.example.projecto;
 
+
+import javafx.fxml.FXML;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
-
-
 
 public class FacturaDAO{
     private Connection connection;
@@ -59,5 +60,51 @@ public class FacturaDAO{
         ps.setInt(2, id);
         ps.executeUpdate();
     }
-}
 
+    // Obtener proveedores para el combobox
+    public List<Proveedor> obtenerProveedores() throws SQLException {
+        List<Proveedor> proveedores = new ArrayList<>();
+
+        if (connection == null || connection.isClosed()) {
+            throw new SQLException("La conexión con la base de datos no está activa.");
+        }
+
+        String query = "SELECT id_proveedor, nombre, direccion, contacto FROM proveedores";
+        try (PreparedStatement ps = connection.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                int id = rs.getInt("id_proveedor");
+                String nombre = rs.getString("nombre");
+                String contacto = rs.getString("contacto");
+                String direccion = rs.getString("direccion");
+
+                if (nombre == null) nombre = "Sin nombre";
+                if (contacto == null) contacto = "Sin contacto";
+                if (direccion == null) direccion = "Sin dirección";
+
+                Proveedor proveedor = new Proveedor(id, nombre, contacto, direccion);
+                proveedores.add(proveedor);
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error al ejecutar la consulta de proveedores.");
+            e.printStackTrace();
+            throw e;
+        }
+
+        return proveedores;
+    }
+
+    public List<String> listarFacturas() throws SQLException {
+        List<String> facturas = new ArrayList<>();
+        String query = "SELECT numero_factura FROM facturas WHERE estado = 'pendiente' ";
+        try (Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
+            while (rs.next()) {
+                String numeroFactura = rs.getString("numero_factura");
+                facturas.add(numeroFactura);
+            }
+        }
+        return facturas;
+    }
+}
