@@ -46,17 +46,10 @@ public class LoginController {
     public void registrarview(ActionEvent e) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Register.fxml"));
         Parent root = loader.load();
-
-        // Obtener el Stage actual desde el evento (desde el origen del evento)
         Stage stage = (Stage) ((Button) e.getSource()).getScene().getWindow();
-
-        // Crear una nueva escena con la vista cargada
         Scene scene = new Scene(root);
-
-        // Cambiar la escena del escenario actual
         stage.setScene(scene);
 
-        // Mostrar la nueva escena
         stage.show();
     }
 

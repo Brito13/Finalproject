@@ -1,61 +1,157 @@
 package com.example.projecto;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
-import javafx.application.Application;
+import com.example.projecto.Documentos;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
+import javax.print.Doc;
+import java.io.IOException;
 import java.net.URL;
-import java.time.LocalTime;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
-
-public class HomeController extends Application {
-
-
+public class HomeController implements Initializable {
 
     @FXML
-     Label timeLabel;  // El Label donde se mostrará la hora
-    @FXML
-     Label dateLabel;  // El Label donde se mostrará el día
+    private Label timeLabel;
 
-    public void initialize() {
+    @FXML
+    private Label dateLabel;
+
+    private static Stage ventanaClientes = null;
+    private static Stage ventanaRentas = null;
+    private static Stage ventanaPeliculas = null;
+
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         loadLabelText();
     }
 
-
     private void loadLabelText() {
-        // Obtener la hora actual
         LocalTime time = LocalTime.now();
         LocalDate today = LocalDate.now();
 
-        // Definir el formato para el día de la semana
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE");
-
-        // Formatear la fecha para obtener el nombre completo del día
+        // Dia en texto (lunes, martes, etc.)
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE", new Locale("es","ES"));
         String dayOfWeek = today.format(formatter);
 
 
-        // Definir el formato de la hora
-        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm a");  // Puedes personalizar el formato
-        String formattedTime = time.format(timeFormatter);  // Formatear la hora en el formato deseado
+        // Hora formateada
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm a");
+        String formattedTime = time.format(timeFormatter);
 
-        // Establecer el texto del label con la hora actual
         timeLabel.setText(formattedTime);
         dateLabel.setText(dayOfWeek);
     }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        loadLabelText();
+
+
+
+    public void GenerarReporte(ActionEvent e) throws IOException{
+        Documentos doc = new Documentos();
+        Documentos.generarReporteExcel();
+    }
+
+
+    public void Clientes(ActionEvent e) throws IOException{
+        try {
+
+            // VALIDACIÓN: si ya hay una ventana abierta → traer al frente y salir
+            if (ventanaClientes != null && ventanaClientes.isShowing()) {
+                ventanaClientes.toFront();
+                return;
+            }
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Clientes.fxml"));
+            Parent root = loader.load();
+
+            // Crear un nuevo Stage
+            Stage nuevaVentana = new Stage();
+            nuevaVentana.setTitle("Clientes");
+
+            // Crear la escena
+            Scene scene = new Scene(root);
+
+            // Asignar la escena al nuevo Stage
+            nuevaVentana.setScene(scene);
+
+            // GUARDAR referencia para controlar la ventana
+            ventanaClientes = nuevaVentana;
+
+            // Cuando cierre la ventana, permitir abrir otra después
+            nuevaVentana.setOnCloseRequest(event -> ventanaClientes = null);
+
+            // Mostrar la nueva ventana sin cerrar la anterior
+            nuevaVentana.show();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
+    public void Peliculas(ActionEvent e) throws IOException {
+        try {
+            if (ventanaPeliculas != null && ventanaPeliculas.isShowing()) {
+                ventanaPeliculas.toFront();
+                return;
+            }
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Pelicula.fxml"));
+            Parent root = loader.load();
+
+            Stage nuevaVentana = new Stage();
+            nuevaVentana.setTitle("Pelicula");
+
+            Scene scene = new Scene(root);
+            nuevaVentana.setScene(scene);
+
+            ventanaPeliculas = nuevaVentana;
+
+            nuevaVentana.setOnCloseRequest(event -> ventanaPeliculas = null);
+            nuevaVentana.show();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void Rentas(ActionEvent e) throws IOException {
+        try {
+            if (ventanaRentas!= null && ventanaRentas.isShowing()) {
+                ventanaRentas.toFront();
+                return;
+            }
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Renta.fxml"));
+            Parent root = loader.load();
+
+            Stage nuevaVentana = new Stage();
+            nuevaVentana.setTitle("Renta");
+
+            Scene scene = new Scene(root);
+            nuevaVentana.setScene(scene);
+
+            ventanaRentas = nuevaVentana;
+
+            nuevaVentana.setOnCloseRequest(event -> ventanaRentas = null);
+            nuevaVentana.show();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 }

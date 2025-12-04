@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="594.0" prefWidth="798.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projecto.Clientes">
+   <children>
+      <TableView fx:id="tablaClientes" layoutX="311.0" layoutY="154.0" prefHeight="326.0" prefWidth="463.0">
+        <columns>
+          <TableColumn fx:id="colCodigo" prefWidth="83.0" text="Codigo" />
+          <TableColumn fx:id="colNombre" prefWidth="98.0" text="Nombre" />
+            <TableColumn fx:id="colTelefono" prefWidth="82.0" text="Telefono" />
+            <TableColumn fx:id="colCorreo" prefWidth="199.0" text="Correo" />
+        </columns>
+      </TableView>
+      <Label layoutX="50.0" layoutY="198.0" text="Codigo" />
+      <Label layoutX="50.0" layoutY="255.0" text="Nombre" />
+      <Label layoutX="50.0" layoutY="317.0" text="Telefono" />
+      <Label layoutX="54.0" layoutY="381.0" text="Correo" />
+      <Button layoutX="64.0" layoutY="436.0" mnemonicParsing="false" onAction="#agregarCliente" prefHeight="25.0" prefWidth="67.0" text="Agregar" />
+      <Button layoutX="244.0" layoutY="436.0" mnemonicParsing="false" onAction="#eliminarCliente" prefHeight="25.0" prefWidth="67.0" text="Eliminar" textFill="#f50000" />
+      <Button layoutX="155.0" layoutY="436.0" mnemonicParsing="false" onAction="#modificarCliente" text="Modificar" />
+      <Label layoutX="332.0" layoutY="47.0" prefHeight="17.0" prefWidth="134.0" text="Clientes">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCodigo" layoutX="121.0" layoutY="194.0" />
+      <TextField fx:id="txtNombre" layoutX="121.0" layoutY="251.0" />
+      <TextField fx:id="txtTelefono" layoutX="121.0" layoutY="313.0" />
+      <TextField fx:id="txtCorreo" layoutX="121.0" layoutY="377.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="504.0" prefWidth="777.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projecto.RentaController">
+
+    <!-- Registrar Renta -->
+    <Label layoutX="20" layoutY="10" style="-fx-font-weight: bold; -fx-font-size: 14px;" text="Registrar Renta" />
+
+    <Label layoutX="20" layoutY="40" text="Cliente:" />
+    <ComboBox fx:id="cbCliente" layoutX="80" layoutY="35" prefWidth="150" />
+
+    <Label layoutX="250" layoutY="40" text="Película:" />
+    <ComboBox fx:id="cbPelicula" layoutX="310" layoutY="35" prefWidth="150" />
+
+    <Label layoutX="20" layoutY="80" text="Fecha Renta:" />
+    <DatePicker fx:id="dpFechaRenta" layoutX="100" layoutY="75" />
+
+    <Label layoutX="286.0" layoutY="79.0" text="Precio:" />
+    <TextField fx:id="txtPrecio" layoutX="347.0" layoutY="75.0" prefWidth="100" />
+
+    <Button fx:id="btnRegistrarRenta" layoutX="479.0" layoutY="75.0" onAction="#registrarRenta" text="Registrar Renta" />
+
+    <Separator layoutX="20" layoutY="120" prefWidth="660" />
+
+    <!-- Tabla de Rentas Pendientes -->
+    <Label layoutX="20" layoutY="140" style="-fx-font-weight: bold; -fx-font-size: 14px;" text="Rentas Pendientes" />
+    <TableView fx:id="tablaRentas" layoutX="20" layoutY="170" prefHeight="200" prefWidth="732.0" />
+
+    <!-- Registrar Devolución -->
+    <Label layoutX="20" layoutY="380" text="Registrar Devolución" />
+    <Label layoutX="150" layoutY="380" text="Fecha Devolución:" />
+    <DatePicker fx:id="dpFechaDevolucion" layoutX="260" layoutY="375" />
+    <Button fx:id="btnRegistrarDevolucion" layoutX="450" layoutY="375" onAction="#registrarDevolucion" text="Registrar Devolución" />
+
+</AnchorPane>

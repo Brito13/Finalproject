@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="593.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projecto.PeliculaController">
+   <children>
+      <TableView fx:id="tablaPeliculas" layoutX="321.0" layoutY="154.0" prefHeight="326.0" prefWidth="463.0">
+         <columns>
+            <TableColumn fx:id="colTitulo" prefWidth="83.0" text="Titulo" />
+            <TableColumn fx:id="colGenero" prefWidth="98.0" text="Geneo" />
+            <TableColumn fx:id="colFecha" prefWidth="171.0" text="Fecha de Lanzamiento" />
+            <TableColumn fx:id="colDisponibilidad" prefWidth="110.0" text="Disponibilidad" />
+         </columns>
+      </TableView>
+      <Label layoutX="64.0" layoutY="187.0" text="Titulo" />
+      <Label layoutX="60.0" layoutY="258.0" text="Genero" />
+      <Label layoutX="21.0" layoutY="323.0" text="Fecha de Lanzamiento" />
+      <Button layoutX="64.0" layoutY="436.0" mnemonicParsing="false" onAction="#agregarPelicula" prefHeight="25.0" prefWidth="67.0" text="Agregar" />
+      <Button layoutX="244.0" layoutY="436.0" mnemonicParsing="false" onAction="#eliminarPelicula" prefHeight="25.0" prefWidth="67.0" text="Eliminar" textFill="#f50000" />
+      <Button layoutX="155.0" layoutY="436.0" mnemonicParsing="false" onAction="#modificarPelicula" text="Modificar" />
+      <Label layoutX="332.0" layoutY="47.0" prefHeight="17.0" prefWidth="134.0" text="Peliculas">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTitulo" layoutX="155.0" layoutY="183.0" />
+      <TextField fx:id="txtGenero" layoutX="155.0" layoutY="254.0" />
+      <TextField fx:id="txtFechaLanzamiento" layoutX="155.0" layoutY="319.0" />
+      <Label layoutX="42.0" layoutY="380.0" text="Disponibilidad" />
+      <ComboBox fx:id="comboDisponibilidad" layoutX="155.0" layoutY="376.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
